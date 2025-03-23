@@ -1,0 +1,14 @@
+# Ignore the generated 10MB file
+output.txt
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.swp
+
+# Ignore Docker-related files (if any)
+docker-compose.yml

@@ -50,8 +50,8 @@ Packages Challenge B into a Docker container for easy execution and output savin
 
 ## **Installation**
 1. Clone the repository:
-   ```git clone https://github.com/shubhampokhriyal/snappymob-challenge.git
-   ```cd snappymob-challenge
+   `git clone https://github.com/shubhampokhriyal/snappymob-challenge.git`
+   `cd snappymob-challenge`
 
 ## **Usage**
 1. Generate 10MB File (Challenge A)

@@ -74,7 +74,9 @@ Packages Challenge B into a Docker container for easy execution and output savin
    Output: The classified objects will be printed to the console.
 
 3. Dockerize (Challenge C)
+
    Step 1: Build the Docker Image
+   
    Build the Docker image using the provided Dockerfile:
    ```
    docker build -t snappymob-classifier .

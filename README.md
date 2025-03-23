@@ -53,6 +53,7 @@ Packages Challenge B into a Docker container for easy execution and output savin
    ```
    git clone https://github.com/shubhampokhriyal/snappymob-challenge.git
    ```
+   ```
    cd snappymob-challenge
 
 ## **Usage**

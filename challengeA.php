@@ -1,4 +1,7 @@
 <?php
+const MAX_FILE_SIZE = 10 * 1024 * 1024; //10MB
+const ALL_LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const ALL_DIGITS = '0123456789';
 /**
  * Generates a random alphabetical string of a length between 1 and 20.
  *
@@ -7,9 +10,10 @@
  *
  * @return string
  */
-function genAlphabetical() {
+function genAlphabetical(): string
+{
     $length = rand(1, 20);
-    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $characters = ALL_LETTERS;
     return substr(str_shuffle(str_repeat($characters, $length)), 0, $length);
 }
 
@@ -22,7 +26,8 @@ function genAlphabetical() {
  *
  * @return string The generated real number in string format.
  */
-function genRealNumber() {
+function genRealNumber(): string
+{
     $integerPart = rand(0, 1000000);
     $decimalPart = str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT);
     return $integerPart . '.' . $decimalPart;
@@ -35,15 +40,27 @@ function genRealNumber() {
  *
  * @return string The generated integer in string format.
  */
-function genInteger() {
+function genInteger(): string
+{
     return (string)rand(0, PHP_INT_MAX);
 }
 
-function genAlphanumeric() {
+/**
+ * Generates a random alphanumeric string with optional leading and trailing spaces.
+ *
+ * The function creates a core alphanumeric string of random length between 1 and 20,
+ * consisting of both uppercase and lowercase letters and digits. It then prepends and
+ * appends a random number of spaces (ranging from 0 to 10) to the string.
+ *
+ * @return string The generated alphanumeric string with possible spaces.
+ */
+
+function genAlphanumeric(): string
+{
     $leadingSpaces = str_repeat(' ', rand(0, 10));
     $trailingSpaces = str_repeat(' ', rand(0, 10));
     $coreLength = rand(1, 20);
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $characters = ALL_DIGITS . ALL_LETTERS;
     $core = '';
     for ($i = 0; $i < $coreLength; $i++) {
         $core .= $characters[rand(0, strlen($characters) - 1)];
@@ -51,8 +68,8 @@ function genAlphanumeric() {
     return $leadingSpaces . $core . $trailingSpaces;
 }
 
-// generate the 10MB file
-$targetSize = 10 * 1024 * 1024; // 10MB
+// generate the file
+$targetSize = MAX_FILE_SIZE;
 $file = fopen('output.txt', 'w');
 $bytesWritten = 0;
 $firstEntry = true;
@@ -74,4 +91,3 @@ while ($bytesWritten < $targetSize) {
 
 fclose($file);
 echo "created output.txt ($bytesWritten bytes)\n";
-?>

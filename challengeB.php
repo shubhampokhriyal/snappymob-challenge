@@ -1,24 +1,24 @@
 <?php
+
 /**
- * Classifies a given object string into one of several categories.
+ * Classifies a given string object into categories based on its content.
  *
- * This function trims the input string and checks its format to classify it 
- * as 'alphabetical', 'alphanumeric', 'integer', 'real', or 'unknown'.
+ * The function trims the input string and checks for the following categories:
+ * 1. Alphabetical: If the trimmed string consists only of alphabetic characters.
+ * 2. Alphanumeric with spaces: If the trimmed string differs from the original and
+ *    consists of alphanumeric characters.
+ * 3. Integer: If the original string is composed entirely of digits.
+ * 4. Real number: If the string is in the format of digits followed by a decimal point
+ *    and more digits.
+ * 5. Alphanumeric without spaces: If the trimmed string consists of alphanumeric characters.
  *
- * Classification is performed in the following order:
- * 1. If the trimmed string consists only of alphabetic characters, it is classified as 'alphabetical'.
- * 2. If the string contains spaces and the trimmed string is alphanumeric, it is classified as 'alphanumeric'.
- * 3. If the string is a digit-only string with no spaces, it is classified as 'integer'.
- * 4. If the string matches the pattern of a real number (digits.digits), it is classified as 'real'.
- * 5. Finally, if the trimmed string is alphanumeric without spaces, it is classified as 'alphanumeric'.
- * 
  * If none of the above conditions are met, the string is classified as 'unknown'.
  *
- * @param string $object The input object string to classify.
- * @return array An array containing the cleaned object string and its classification type.
+ * @param string $object The input string to be classified.
+ * @return array An array containing the trimmed version of the object and its classification type.
  */
 
-function classifyObject($object) {
+function classifyObject(string $object):array {
     $trimmed = trim($object);
 
     // 1. Check if the trimmed string is purely alphabetical

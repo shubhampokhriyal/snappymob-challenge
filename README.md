@@ -1,9 +1,9 @@
-# Snappymob Programming Challenge
+# Three Step Challenge
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-blue.svg)](https://php.net/)
 [![Docker](https://img.shields.io/badge/Docker-✓-blue.svg)](https://docker.com)
 
-A solution to the Snappymob programming challenge, addressing three tasks:
+A solution to the programming challenge, addressing three tasks:
 1. Generate a 10MB file with random objects.
 2. Classify objects from the file and print results to the console.
 3. Dockerize the classifier for portability.

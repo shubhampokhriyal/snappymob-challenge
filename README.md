@@ -52,10 +52,10 @@ Packages Challenge B into a Docker container for easy execution and output savin
 ## **Installation**
 1. Clone the repository:
    ```
-   git clone https://github.com/shubhampokhriyal/snappymob-challenge.git
+   git clone https://github.com/shubhampokhriyal/three-step-challenge.git
    ```
    ```
-   cd snappymob-challenge
+   cd three-step-challenge
 
 ## **Usage**
 1. Generate 10MB File (Challenge A)
@@ -79,11 +79,11 @@ Packages Challenge B into a Docker container for easy execution and output savin
    
    Build the Docker image using the provided Dockerfile:
    ```
-   docker build -t snappymob-classifier .
+   docker build -t three-step-classifier .
    ```
    Step 2: Run the Container
    ```
-   docker run -v "$(pwd)/output.txt:/app/input.txt" snappymob-classifier > ./output/output.txt
+   docker run -v "$(pwd)/output.txt:/app/input.txt" three-step-classifier > ./output/output.txt
    ```
    
    Output: The results will be saved to ./output/output.txt on your host machine.
